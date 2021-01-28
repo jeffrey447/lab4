@@ -4,7 +4,9 @@
  */
 
 exports.view = function(req, res) {
-  let nameToShow = req.params.userName;
+  let nameToShow = (req.params.userName || 'World');
+  console.log(`Name is ${nameToShow}.`);
+
   res.render('hello', {
   	'name': nameToShow,
   });
